@@ -21,6 +21,6 @@ flake8 .
 ```shell script
 ./manage.py runserver
 ``` 
-- открыть в браузере http://localhost:8000/index.html
-- открыть в браузере http://localhost:8000/departure/<str:departure>
-- открыть в браузере http://localhost:8000/tour/<int:id>
+- открыть в браузере http://localhost:8000
+- открыть в браузере http://localhost:8000/departure/str
+- открыть в браузере http://localhost:8000/tour/123
