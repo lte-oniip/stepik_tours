@@ -24,4 +24,4 @@ flake8 .
 - открыть в браузере http://localhost:8000/index.html
 - открыть в браузере http://localhost:8000/departure/<str:departure>
 - открыть в браузере http://localhost:8000/tour/<int:id>
-
+...
