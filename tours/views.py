@@ -44,8 +44,8 @@ def tour_view(request, id):
 
 
 def custom_handler404(request, exception):
-    return HttpResponseNotFound('Ресурс не найден!')
+    return HttpResponseNotFound('Ошибка сервера!')
 
 
 def custom_handler500(request):
-    return HttpResponseServerError('Ошибка сервера!')
+    return HttpResponseServerError('Ресурс не найден!')
