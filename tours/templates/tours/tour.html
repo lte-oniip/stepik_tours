@@ -1,9 +1,9 @@
 {% extends 'tours/base.html' %}
 {% block container %}
-
+{% load stars %}
   <main class="container">
     <section class="mt-3 pb-5">
-      <h1 class="display-3 mt-4">{{title}} {{ stars }} </h1>
+      <h1 class="display-3 mt-4">{{title}} {{ tours.stars|stars }}</h1>
       <!-- HERO -->
       <p class="lead">{{tours.country}} {{departure}} {{tours.nights}} ночей</p>
       <img src="{{tours.picture}}" class="w-75" alt="">

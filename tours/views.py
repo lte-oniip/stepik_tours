@@ -5,10 +5,7 @@ from random import sample
 
 
 def main_view(request):
-    tours_number = sample(range(1, 17), 6)
-    tour_six = {}
-    for tour in tours_number:
-        tour_six.update({tour: tours[tour]})
+    tour_six = dict(sample(tours.items(), 6))
 
     return render(request, 'tours/index.html', context={'title': title,
                                                         'subtitle': subtitle,
@@ -19,7 +16,6 @@ def main_view(request):
 
 def departure_view(request, departure):
     departure_count = sum(1 for tour in tours.values() if tour["departure"] == departure)
-
     price_max = max(int(tour["price"]) for tour in tours.values() if tour["departure"] == departure)
     price_min = min(int(tour["price"]) for tour in tours.values() if tour["departure"] == departure)
     nights_max = max(int(tour["nights"]) for tour in tours.values() if tour["departure"] == departure)
@@ -39,8 +35,7 @@ def departure_view(request, departure):
 def tour_view(request, id):
     return render(request, 'tours/tour.html', context={'tours': tours[id],
                                                        'departure': departures[tours[id]["departure"]],
-                                                       'departures': departures,
-                                                       'stars': int(tours[id]["stars"]) * "★"})
+                                                       'departures': departures})
 
 
 def custom_handler404(request, exception):
